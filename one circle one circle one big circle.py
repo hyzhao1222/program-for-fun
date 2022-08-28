@@ -1,0 +1,93 @@
+from logging.config import fileConfig
+from turtle import *
+import turtle
+screen=turtle.Screen()
+screen.setup(1000,800)
+def draw_ears():
+    fillcolor("#FF69B4")
+    #left ear
+    pu()
+    goto(-120,230)
+    pd()
+    begin_fill()
+    circle(40)
+    end_fill()
+    #right ear
+    pu()
+    goto(120,230)
+    pd()
+    begin_fill()
+    circle(40)
+    end_fill()
+def draw_face():
+    #draw the circle of the face
+    pu()
+    goto(0,100)
+    pd()
+    fillcolor("pink")
+    begin_fill()
+    circle(100)
+    end_fill()
+def draw_nose():
+    noseY=170
+    pu()
+    goto(-30,noseY)
+    pd()
+    fillcolor("#FF69B4")
+    begin_fill()
+    turtle.right(45)
+    for loop in range(2):
+        turtle.circle(42,90)
+        turtle.circle(15,90)
+    end_fill()
+    fillcolor("black")
+    #draw the right nose
+    pu()
+    goto(11,noseY)
+    pd()
+    begin_fill()
+    circle(10)
+    end_fill()
+    #draw the left nose
+    pu()
+    goto(-19,noseY)
+    pd()
+    begin_fill()
+    circle(10)
+    end_fill()
+def draw_eyes():
+    eyesY=220   #the y position of the eyes
+    fillcolor("black")
+    pu()
+    goto(30,eyesY+3)
+    pd()
+    begin_fill()
+    circle(20)
+    end_fill()
+    pu()
+    goto(-60,eyesY+3)
+    pd()
+    begin_fill()
+    circle(20)
+    end_fill()
+def draw_body():
+    fillcolor("pink")
+    pu()
+    goto(-100,-121)
+    pd()
+    begin_fill()
+    circle(130)
+    end_fill()
+def texts():
+    hideturtle()
+    pu()
+    goto(-10,0)
+    pd()
+    write('A pig',align="center",font=("Arial",20,"normal"))
+draw_ears()
+draw_face()
+draw_nose()
+draw_eyes()
+draw_body()
+texts()
+done()
